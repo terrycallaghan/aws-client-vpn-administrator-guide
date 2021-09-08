@@ -98,7 +98,7 @@ The following flow chart contains the steps to diagnose internet, peered VPC, an
 
    If you're unsure about which IP address to specify for the DNS servers, specify the VPC DNS resolver at the \.2 IP address in your VPC\.
 
-1. For internet access, check if you are able to ping a public IP address or a public website, for example, `amazon.com`\. If you do not get a response, make sure that the route table for the associated subnets has a default route that targets either an internet gateway or a NAT gateway\. If the route is in place, verify that the associated subnet does not have network access control list rules that block inbound and outbound traffic\.
+1. For internet access, check if you are able to ping a public IP address or a public website, for example, `amazon.com`\. If you do not get a response, make sure that the route table for the associated subnets has a default route that targets either an internet gateway or a NAT gateway\. If the route is in place, verify that the associated subnet does not have network access control list rules that block inbound and outbound traffic\. Check that you have a destination CIDR of 0.0.0.0/0 in Authorize Ingress Rules\. Note that you may have multiple Authorize Ingress entries\.
 
    If you are unable to reach a peered VPC, verify that the associated subnet's route table has a route entry for the peered VPC\.
 
